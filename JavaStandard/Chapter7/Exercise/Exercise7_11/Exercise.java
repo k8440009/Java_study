@@ -1,9 +1,10 @@
-package JavaStandard.Chapter7.Exercise.Exercise7_10;
+package JavaStandard.Chapter7.Exercise.Exercise7_11;
 
 class MyTv2 {
 	private boolean isPowerOn;
 	private int channel;
 	private int volume;
+	private int prevChannel;
 
 	private final int MAX_VOLUME = 100;
 	private final int MIN_VOLUME = 0;
@@ -27,6 +28,7 @@ class MyTv2 {
 		if (channel > MAX_CHANNEL || channel < MIN_CHANNEL)
 			return ;
 
+		this.prevChannel = this.channel;
 		this.channel = channel;
 	}
 
@@ -41,6 +43,10 @@ class MyTv2 {
 		this.volume = volume;
 	}
 
+	public void gotoPrevChannel(){
+		setChannel(prevChannel);
+	}
+
 }
 
 class Exercise {
@@ -48,8 +54,12 @@ class Exercise {
 		MyTv2 t = new MyTv2();
 
 		t.setChannel(10);
-		System.out.println("CH:" + t.getChannel());
-		t.setVolume(20);
-		System.out.println("VOL:" + t.getVolume());
+		System.out.println("CH:"+t.getChannel());
+		t.setChannel(20);
+		System.out.println("CH:"+t.getChannel());
+		t.gotoPrevChannel();
+		System.out.println("CH:"+t.getChannel());
+		t.gotoPrevChannel();
+		System.out.println("CH:"+t.getChannel());
 	}
 }
