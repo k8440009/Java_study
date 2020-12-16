@@ -5,7 +5,7 @@ class Product {
 	int bonusPoint;
 
 	Product(){}
-	
+
 	Product(int price){
 		this.price = price;
 		bonusPoint = (int)(price / 10.0);
@@ -21,7 +21,7 @@ class Tv extends Product{
 	}
 }
 
-public class Exercise {
+class Exercise {
 	public static void main(String[] args) {
 		Tv t = new Tv();
 	}
