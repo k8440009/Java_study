@@ -1,2 +1,3 @@
-# 백기선 아죠씨와 함께하는 자바스터디
+# 백기선님과 함께하는 자바스터디
 ## week5
+- https://github.com/whiteship/live-study/issues/5
