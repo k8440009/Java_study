@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class Jpamain {
     public static void main(String[] args) {
@@ -13,24 +14,11 @@ public class Jpamain {
         EntityTransaction tx = em.getTransaction();
 
         tx.begin();
-        /*
-        Member member = new Member();
-
-        member.setId(1L);
-        member.setName("HelloA");
-
-        em.persist(member);
-        tx.commit();
-
-        em.close();
-        emf.close();
-        */
         try{
-            Member member = new Member();
-            member.setId(3L);
-            member.setName("HelloC");
+            Member member = em.find(Member.class, 150L);
+            member.setName("AAAA");
 
-            em.persist(member);
+            em.detach(member);
 
             tx.commit();
         } catch (Exception e){
