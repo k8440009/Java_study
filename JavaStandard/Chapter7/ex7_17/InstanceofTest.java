@@ -1,4 +1,4 @@
-package JavaStandard.Chapter7;
+package JavaStandard.Chapter7.ex7_17;
 
 public class InstanceofTest {
 	public static void main(String[] args) {
